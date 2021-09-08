@@ -25,10 +25,13 @@ public class UI {
 
 	public static void main(String[] args) {
 		UI interface1=new UI();
+		char option='z';//To make menu
+		while(option!='e'||option!='E') {
+		
 		interface1.SignUp();
 		interface1.Show();
 		// TODO Auto-generated method stub
-
+		}
 	}
 
 }
