@@ -7,8 +7,8 @@
  *
  */
 public class Accounts {
-	int Acc_no;
-	String Acc_typ;
+	private int Acc_no;
+	private String Acc_typ;
 
 	/**
 	 * 
@@ -27,6 +27,7 @@ public class Accounts {
 	 * @param args
 	 */
 	public void Display() {
+		System.out.println("Your assigned Account Number and Account type is: ");
 		System.out.println(Acc_no);
 		System.out.println(Acc_typ);
 	}
