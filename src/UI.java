@@ -7,7 +7,7 @@ public class UI {
 	//--------------------Declarations--------------------------------
 	//----------------------------------------------------------------
 	private String UserNames;
-	private ArrayList<Accounts> a=new ArrayList<Accounts>();
+	private ArrayList<Checking> a=new ArrayList<Checking>();
 	//Accounts a=new Accounts();
 	
 	
@@ -21,26 +21,67 @@ public class UI {
 		// TODO Auto-generated constructor stub
 	}
 	
+	//----------------------------------------------------------------
+		//-----------------------Accounts Detail--------------------------
+		//----------------------------------------------------------------
+		public void Operations(int i,char atyp) {
+			//Checking b=;
+			char opt='M';
+			while(opt!='0') {
+			if(atyp=='X'||atyp=='x') {
+				Checking b=(Checking)a.get(i);
+				System.out.println("Select what you want to do");
+				System.out.println("(A) Deposit Money");
+				System.out.println("(B) Withdraw Money");
+				System.out.println("(C)Check Balance");
+				System.out.println("(D)PrintStatement");
+				System.out.println("(E)Transfer Money");
+				System.out.println("(F)Calculate Zakat");
+				System.out.println("(G)Display all deductions");
+				Scanner i1=new Scanner(System.in);
+				opt=i1.next().charAt(0);
+				if(opt=='A'||opt=='a') {
+					b.makeDeposit();
+					}
+				if(opt=='C'||opt=='c') {
+				b.checkBalance();
+				}
+			}
+		}
+			
+		}
+	
+	
+	
 	
 	//----------------------------------------------------------------
 	//----------------------Sign Up-----------------------------------
 	//--------------------Create Account------------------------------
-	public void SignUp(int unique) {
+	public void SignUp(int unique) {			//Create Account Module
 		Scanner i1=new Scanner(System.in);
-		System.out.println("Enter Account type");
-		String AccT=i1.nextLine();
+		System.out.println("Select Account type");
+		System.out.println("Press X for Checking");
+		System.out.println("Press Y for Saving");
+		char AccT=i1.next().charAt(0);
+		if(AccT=='X'||AccT=='x') {
+			a.add(new Checking(AccT,unique));
+			Operations(unique,AccT);
+		}
 		//System.out.println("Enter Account Number");
 		//int accNum=i1.nextInt();
-		a.add(new Accounts(AccT,unique));
+		//a.add(new Accounts(AccT,unique));
 	}
+	
+	
+	
 	
 	//----------------------------------------------------------------
 	//----------------------Initial Display Function------------------
 	//----------------------------------------------------------------
 	
 	public void Show(int n) {
-		Accounts b=(Accounts)a.get(n);
-		b.Display();
+		//aChecking b=(Checking)a.get(n);
+		//b.Display();
 	}
 	
 	//----------------------------------------------------------------
