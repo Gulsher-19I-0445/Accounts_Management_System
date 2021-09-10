@@ -1,7 +1,7 @@
 
 public class Checking extends Accounts {
-	private int free_count;
-	private int fee;
+	int free_count;
+	int fee;
 
 	public Checking() {
 		free_count=2;
@@ -11,6 +11,8 @@ public class Checking extends Accounts {
 
 	public Checking(int A, int num) {
 		super(A, num);
+		free_count=2;
+		fee=10;
 		// TODO Auto-generated constructor stub
 	}
 

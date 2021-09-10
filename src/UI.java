@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class UI {
 	
-	//----------------------------------------------------------------
+	///----------------------------------------------------------------
 	//--------------------Declarations--------------------------------
 	//----------------------------------------------------------------
 	private String UserNames;
@@ -17,7 +17,7 @@ public class UI {
 	//-----------------------------------------------------------------
 	public UI() {
 		//a.add(new Accounts());
-		//
+		System.out.println("Hello");
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -42,7 +42,17 @@ public class UI {
 				opt=i1.next().charAt(0);
 				if(opt=='A'||opt=='a') {
 					b.makeDeposit();
+					if(b.free_count==0) {
+						System.out.println("\nYour free monthly deposit has ended");
+						b.deduction();
 					}
+					b.free_count--;
+					}
+				
+				if(opt=='B'||opt=='b') {
+					
+				}
+				
 				if(opt=='C'||opt=='c') {
 				b.checkBalance();
 				}
@@ -101,7 +111,7 @@ public class UI {
 		if(option=='a'||option=='A')
 		interface1.SignUp(id);
 		
-		interface1.Show(id);
+		//interface1.Show(id);
 		id++;
 		// TODO Auto-generated method stub
 		}
